@@ -1,0 +1,23 @@
+{
+  "productName": "Anchor",
+  "version": "0.1.0",
+  "identifier": "com.anchor.ssot",
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../frontend/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Anchor",
+        "width": 1200,
+        "height": 800
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  }
+}

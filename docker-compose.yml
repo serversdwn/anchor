@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    ports:
+      - "7085:7085"
+    volumes:
+      - anchor_db:/app/anchor.db
+  frontend:
+    build: ./frontend
+    environment:
+      - VITE_API_BASE=http://localhost:7085
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  anchor_db:
