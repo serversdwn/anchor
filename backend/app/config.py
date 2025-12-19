@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pathlib import Path
 
 
 class Settings(BaseSettings):
@@ -9,8 +10,9 @@ class Settings(BaseSettings):
     lyra_token: str = ""
     jwt_secret: str = "change-me"
     jwt_alg: str = "HS256"
-    database_url: str = "sqlite:///./anchor.db"
+    database_url: str = "sqlite:////data/anchor.db"
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
-
+    db_path = Path("/data")
+    db_path.mkdir(parents=True, exist_ok=True)
 
 settings = Settings()

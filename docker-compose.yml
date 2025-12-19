@@ -5,7 +5,7 @@ services:
     ports:
       - "7085:7085"
     volumes:
-      - anchor_db:/app/anchor.db
+      - anchor_db:/data
   frontend:
     build: ./frontend
     environment:
